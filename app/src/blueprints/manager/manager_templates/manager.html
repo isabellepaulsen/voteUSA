@@ -1,0 +1,11 @@
+{% extends 'login.html' %}
+
+{% block content %}
+    <h1>Manager Dashboard</h1>
+    <p>Welcome
+        {% if current_user.is_authenticated %}
+            {{ current_user.email }} !
+        {% endif %}
+    </p>
+    <a href="{{url_for('main_bp.logout')}}">Logout</p></a>
+{% endblock %}
